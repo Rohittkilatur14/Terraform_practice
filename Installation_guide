@@ -1,0 +1,42 @@
+To install Terraform on Windows, it is preferable to use 'Chocolatey' using PowerShell/Git-bash.
+Chocolatey is a package manager that automates the installation process on Windows systems.
+
+🛠️ Step-by-Step Installation :-
+
+a) Open PowerShell in Search icon...
+b) Search for "PowerShell" in the Start menu.
+c) Right-click on "Windows PowerShell" and select Run as Administrator.
+d) Ensure Chocolatey is Installed:
+
+If you don't have Chocolatey installed, you must install it first.
+Copy and paste the following script into the administrative PowerShell window and press Enter:-
+
+Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
+
+To verify the installation, close and reopen PowerShell as an Administrator, then run choco version.
+
+Install Terraform:
+In the administrative PowerShell window, run the following command to install the latest version of Terraform:
+
+choco install terraform -y (The -y flag automatically approves all confirmation prompts)
+
+Verify the Installation:
+
+Close and reopen your terminal (Command Prompt or PowerShell) to ensure the system's PATH environment variable is updated.
+
+Run the following command to check the installed version:
+
+terraform version
+
+You should see output displaying the installed Terraform version, confirming a successful installation.
+
+Managing Terraform Versions
+Upgrade: To upgrade Terraform to the latest available version, use:
+
+choco upgrade terraform -y
+
+Install Specific Version: To install a specific version, you can specify the version number:
+
+choco install terraform --version 1.13.5 -y
+
+
